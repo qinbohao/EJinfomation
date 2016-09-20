@@ -50,8 +50,6 @@ String URL_LIST="http://218.94.50.12/sunflower/candidate/candidateEnter.action?a
 
     public static void main(String[] args) {
         Spider.create(new EjinfoProcessor()).addUrl("http://218.94.50.12/sunflower/candidate/candidateEnter.action?act=licensePrint&systemFlag=1&candidateId=8224933")
-               .run();
-    	//mybatisµÄÅäÖÃÎÄ¼ş
-       
+               .run();   
     }
 }
