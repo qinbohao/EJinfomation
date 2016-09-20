@@ -16,4 +16,7 @@
         resultType="sql.java.Info">
         select * from Info where name=#{name}
     </select>
+    <insert id="addInfo" parameterType="sql.java.Info">
+        insert into Info(name,cardid,schoolid,address) values(#{name},#{cardid},#{schoolid},#{address})
+    </insert>
 </mapper>
