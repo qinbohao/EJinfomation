@@ -20,11 +20,13 @@ String URL_LIST="http://218.94.50.12/sunflower/candidate/candidateEnter.action?a
             .setSleepTime(10)
             .addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
             .addHeader("Accept-Encoding", "gzip, deflate")
-            .addHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
+            .addHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3")
+            .addCookie("JSESSIONID", "FDB44CAEC00AF43BAD480224816D7A37")
+            .setDomain("http://127.0.0.1");
     @Override
     public void process(Page page) {
         //列表页
-    	i++;
+    	/*i++;
     	page.addTargetRequest(URL_LIST+(8224933+i));
     	page.addTargetRequest(URL_LIST+(8224933-i));
     	Info info=new Info();
@@ -39,7 +41,8 @@ String URL_LIST="http://218.94.50.12/sunflower/candidate/candidateEnter.action?a
     	 else{
     		page.putField("info", info);
     		
-    	 }
+    	 }*/
+    	page.putField("html:", page.getHtml());
     	
     }
 
@@ -49,7 +52,7 @@ String URL_LIST="http://218.94.50.12/sunflower/candidate/candidateEnter.action?a
     }
 
     public static void main(String[] args) {
-        Spider.create(new EjinfoProcessor()).addUrl("http://218.94.50.12/sunflower/candidate/candidateEnter.action?act=licensePrint&systemFlag=1&candidateId=8224933")
+        Spider.create(new EjinfoProcessor()).addUrl("http://127.0.0.1:8080/test/index.jsp")
                .run();
     	//mybatis的配置文件
        
