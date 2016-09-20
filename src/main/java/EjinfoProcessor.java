@@ -17,12 +17,13 @@ int i=0;
 String URL_LIST="http://218.94.50.12/sunflower/candidate/candidateEnter.action?act=licensePrint&systemFlag=1&candidateId=";
     private Site site = Site
             .me()
-            .setSleepTime(10)
+            .setSleepTime(1000)
             .addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
             .addHeader("Accept-Encoding", "gzip, deflate")
             .addHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3")
-            .addCookie("JSESSIONID", "FDB44CAEC00AF43BAD480224816D7A37")
-            .setDomain("http://127.0.0.1");
+            .setDomain("http://127.0.0.1")
+            .addHeader("Cookie","JSESSIONID=FDB44CAEC00AF43BAD480224816D7A37")
+            ;
     @Override
     public void process(Page page) {
         //¡–±Ì“≥
@@ -43,6 +44,7 @@ String URL_LIST="http://218.94.50.12/sunflower/candidate/candidateEnter.action?a
     		
     	 }*/
     	page.putField("html:", page.getHtml());
+    	
     	
     }
 
